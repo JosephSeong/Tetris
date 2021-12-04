@@ -1,0 +1,97 @@
+﻿<Window x:Class="Tetris.Join"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Tetris"
+        mc:Ignorable="d"
+        Title="Join" Height="900" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.6*"/>
+
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,10,0,0"
+                   Text="'*'는 필수 항목입니다.&#x0a;기입하셔야 가입이 가능합니다.&#x0a;또한 모든 항목은 정확히 기입되어야 차후 불이익이 없으십니다." FontSize="10"/>
+
+        <TextBlock Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" 
+                   Text="*ID" FontSize="24" FontWeight="Bold" Margin="0,0,10,0"/>
+        <TextBox x:Name="IDBox" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
+                 FontSize="24"/>
+        <Button x:Name="IDCheckButton" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                Content="아이디 중복체크" FontSize="12" 
+                Click="IDCheck"/>
+        <TextBlock x:Name="IDCheckNotice" Grid.Row="1" Grid.Column="3" VerticalAlignment="Bottom" Margin="10,0,10,10" 
+                   TextWrapping="Wrap"/>
+
+        <TextBlock Grid.Row="2" HorizontalAlignment="Right" VerticalAlignment="Center" 
+                   Text="*PW" FontSize="24" FontWeight="Bold" Margin="0,0,10,0"/>
+        <PasswordBox x:Name="PWBox" Grid.Row="2" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                     FontSize="24"
+                     PasswordChanged="PWconfirmBox_PasswordChanged"/>
+        <TextBlock Grid.Row="2" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                   TextWrapping="Wrap" FontSize="12" Margin="10,0,10,0"
+                   Text="*숫자, 영 대/소문자 및 특수기호를 조합한 6자리 이상의 비밀번호를 입력하세요.">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlDarkColorKey}}"/>
+            </TextBlock.Foreground>
+        </TextBlock>
+
+        <TextBlock Grid.Row="3" HorizontalAlignment="Right" VerticalAlignment="Center" 
+                   Text="*PW 재확인" FontSize="24" FontWeight="Bold" Margin="0,0,10,0"/>
+        <PasswordBox x:Name="PWconfirmBox" Grid.Row="3" Grid.Column="1"
+                     HorizontalAlignment="Stretch" VerticalAlignment="Center" FontSize="24"
+                     PasswordChanged="PWconfirmBox_PasswordChanged"/>
+        <TextBlock x:Name="PWMatchNotice" Grid.Row="3" Grid.Column="2"
+                   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10"
+                   TextWrapping="Wrap" FontSize="12"/>
+        <TextBlock Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                   TextWrapping="Wrap" FontSize="12" Margin="10,0,10,0"/>
+
+        <TextBlock Grid.Row="4" HorizontalAlignment="Right" VerticalAlignment="Center" 
+                   Text="*성명" FontSize="24" FontWeight="Bold" Margin="0,0,10,0"/>
+        <TextBox x:Name="nameBox" Grid.Row="4" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                 FontSize="24"/>
+
+        <TextBlock Grid.Row="5" HorizontalAlignment="Right" VerticalAlignment="Center" 
+                   Text="*생년월일" FontSize="24" FontWeight="Bold" Margin="0,0,10,0"/>
+        <TextBox x:Name="birthdayBox" Grid.Row="5" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                 FontSize="24" KeyUp="birthdayBox_KeyUp"/>
+        <TextBlock x:Name="birthdayBoxNotice" Grid.Row="5" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                   Text="&quot;8자리&quot; 수로 '-' 혹은 '/' 없이 숫자만 입력해주세요." TextWrapping="Wrap" FontSize="12" Margin="10,0,10,0"/>
+
+        <TextBlock Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" 
+                   Text="*전화번호" FontSize="24" FontWeight="Bold" Margin="0,0,10,0"/>
+        <TextBox x:Name="phoneNumBox" Grid.Row="6" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" 
+                 FontSize="24" KeyUp="phoneNumBox_KeyUp"/>
+        <TextBlock x:Name="phoneNumBoxNotice" Grid.Row="6" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                   Text="'-' 혹은 '/' 없이 숫자만 입력해주세요." TextWrapping="Wrap" FontSize="12" Margin="10,0,10,0"/>
+
+        <TextBlock Grid.Row="7" HorizontalAlignment="Right" VerticalAlignment="Center" 
+                   Text="주소" FontSize="24" FontWeight="Bold" Margin="0,0,10,0"/>
+        <ScrollViewer Grid.Column="1" Grid.Row="7" Grid.ColumnSpan="2" 
+                      HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <TextBox x:Name="addressBox" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="0,0,10,0"
+                     TextWrapping="Wrap" FontSize="24"/>
+        </ScrollViewer>
+
+        <Button x:Name="confirm" Grid.Row="8" Grid.Column="1" Margin="20,20,20,20" 
+                Content="확인" FontWeight="Bold" FontSize="24" Click="confirm_Click"/>
+        <Button x:Name="cancel" Grid.Row="8" Grid.Column="2" Margin="20,20,20,20" 
+                Content="취소" FontWeight="Bold" FontSize="24" Click="cancel_Click"/>
+    </Grid>
+</Window>

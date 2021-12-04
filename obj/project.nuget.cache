@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "JVvnH/+z2DZvIE8JWK2OIOLOjB+SDlmKskjW5JmY4+XbynvxJYdtZEhn9klw1+THvzZ0oCPMxYTnX+2Isy7B1w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\USER\\Desktop\\C#\\Training\\Tetris\\Tetris.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\USER\\.nuget\\packages\\documentformat.openxml\\2.14.0\\documentformat.openxml.2.14.0.nupkg.sha512",
+    "C:\\Users\\USER\\.nuget\\packages\\system.io.packaging\\4.7.0\\system.io.packaging.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}
