@@ -62,3 +62,13 @@ C:\Users\USER\Desktop\C#\Training\Tetris\obj\Debug\net5.0-windows\Login.g.cs
 C:\Users\USER\Desktop\C#\Training\Tetris\obj\Debug\net5.0-windows\Login.baml
 C:\Users\USER\Desktop\C#\Training\Tetris\obj\Debug\net5.0-windows\Join.g.cs
 C:\Users\USER\Desktop\C#\Training\Tetris\obj\Debug\net5.0-windows\Join.baml
+C:\Users\USER\Desktop\C#\Training\Tetris\bin\Debug\net5.0-windows\EntityFramework.SqlServer.dll
+C:\Users\USER\Desktop\C#\Training\Tetris\bin\Debug\net5.0-windows\EntityFramework.dll
+C:\Users\USER\Desktop\C#\Training\Tetris\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+C:\Users\USER\Desktop\C#\Training\Tetris\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\USER\Desktop\C#\Training\Tetris\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\USER\Desktop\C#\Training\Tetris\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\USER\Desktop\C#\Training\Tetris\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USER\Desktop\C#\Training\Tetris\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\USER\Desktop\C#\Training\Tetris\obj\Debug\net5.0-windows\Tetris_Content.g.cs
+C:\Users\USER\Desktop\C#\Training\Tetris\bin\Debug\net5.0-windows\Score\Score.xml

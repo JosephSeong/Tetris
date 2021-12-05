@@ -4,9 +4,9 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Tetris"
-      mc:Ignorable="d" d:DesignWidth="800"
-      Title="Login" Height="476" Width="800"
-        MinWidth="600" MinHeight="600"
+      mc:Ignorable="d" d:DesignWidth="500"
+      Title="Login" Height="476" Width="500"
+        MinWidth="900" MinHeight="600"
         Foreground="white"
         FontFamily="Segoe UI Light" FontSize="28">
 
@@ -17,23 +17,68 @@
         </Grid.RowDefinitions>
 
         <Grid.Background>
-            <ImageBrush ImageSource="Assets/Background.png"/>
+            <ImageBrush ImageSource="C:\Users\USER\Desktop\C#\TetrisAssets/LoginBg.png" Stretch="Fill"/>
         </Grid.Background>
 
-        <Border BorderThickness="0" CornerRadius="10" Margin="100,30,100,32" Background="Transparent" Grid.RowSpan="2">
+        <Border CornerRadius="10" Margin="20,30,20,32" Background="Transparent" BorderBrush="white" BorderThickness="1" Grid.RowSpan="2">
             <StackPanel Orientation="Vertical" Margin="40,15,40,5">
-                <TextBlock Foreground="Gray" FontSize="35" FontFamily="Ebrima" Text="LOGIN"></TextBlock>
-                <TextBlock Foreground="Gray" FontSize="13" Text="아이디와 비밀번호를 입력해주세요"></TextBlock>
-                <TextBlock Text="이름" Foreground="Gray" FontWeight="Bold" Margin="0,10,0,0"></TextBlock>
-                <Border BorderThickness="1.3" BorderBrush="Gray" Height="40" CornerRadius="13" Padding="5,10,5,5">
-                    <TextBox x:Name="IdTextBox" BorderThickness="0" TextAlignment="Center" FontSize="15"></TextBox>
+                <TextBlock Foreground="lightGray" FontSize="50" FontFamily="Ebrima" TextAlignment="Center" Text="T E T R I S"></TextBlock>
+                <TextBlock Text="이름" Foreground="Gray" FontSize="15" FontWeight="Bold" Margin="0,170,0,0" Width="275"></TextBlock>
+                <Border BorderThickness="1.3" BorderBrush="SkyBlue" CornerRadius="13" Padding="5,5,5,5" Height="38" Width="280">
+                    <TextBox x:Name="IdTextBox" Margin="0,0,0,3" BorderThickness="0" TextAlignment="Center" FontSize="15"></TextBox>
                 </Border>
-                <TextBlock Text="비밀번호" Foreground="#FF80807F" FontWeight="Bold"></TextBlock>
-                <Border BorderThickness="1.3" BorderBrush="Gray" Height="40" CornerRadius="13" Padding="5,10,5,5" Visibility="Visible">
-                    <TextBox x:Name="PwTextBox" BorderThickness="0" TextAlignment="Center" FontSize="15"></TextBox>
+                <TextBlock Text="비밀번호" Foreground="Gray" FontSize="15" FontWeight="Bold" Width="275"></TextBlock>
+                <Border BorderThickness="1.3" BorderBrush="LightGreen" CornerRadius="13" Padding="5,5,5,5" Visibility="Visible" Height="38" Width="280">
+                    <TextBox x:Name="PwTextBox" BorderThickness="0" TextAlignment="Center" FontSize="15"/>
                 </Border>
-                <Button x:Name="Login_Btn" Margin="0,100,0,0" FontSize="20" Content ="로그인" Click="Login_Btn_Click" Background="White" Foreground="Black"/>
-                <Button x:Name="Join_Btn" Margin="0,20,0,0" FontSize="20" Content ="회원가입" Click="Join_Btn_Click" Background="White"/>
+                <Button x:Name="Login_Btn" Margin="0,20,0,0" FontSize="18" Content ="Login" Click="Login_Btn_Click"  Foreground="Black" Width="280">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border BorderBrush="yellow" BorderThickness="2" Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="white" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Background" Value="yellow" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button x:Name="Join_Btn" Margin="0,20,0,0" FontSize="18" Content ="Sign Up" Click="Join_Btn_Click" Width="280">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="5"/>
+                        </Style>
+                    </Button.Resources>
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border BorderBrush="pink" BorderThickness="2" Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="white" />
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="Background" Value="pink" />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
             </StackPanel>
         </Border>
     </Grid>

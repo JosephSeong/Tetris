@@ -48,6 +48,10 @@
             "DocumentFormat.OpenXml": {
               "target": "Package",
               "version": "[2.14.0, )"
+            },
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
             }
           },
           "imports": [

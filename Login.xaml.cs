@@ -34,12 +34,19 @@ namespace Tetris
             }
             string IdCheck = string.Format("당신은 {0} 님이 맞습니까?", IdTextBox.Text);
             MessageBoxResult nameMessageBoxResult = MessageBox.Show(IdCheck, "Question", MessageBoxButton.YesNo, MessageBoxImage.Question);
-            
+
+            if (nameMessageBoxResult == MessageBoxResult.Yes)
+            {
+                Window win = new Menu();
+                win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+                win.Show();
+                Close();
+            }
             if (nameMessageBoxResult == MessageBoxResult.No)
             {
                 return;
             }
-            this.DialogResult = true;
+           // this.DialogResult = true;
         }
 
         private void Join_Btn_Click(object sender, RoutedEventArgs e)

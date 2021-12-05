@@ -25,10 +25,18 @@
     <None Remove="Assets\TilePurple.png" />
     <None Remove="Assets\TileRed.png" />
     <None Remove="Assets\TileYellow.png" />
+    <None Remove="Score\Score.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Score\Score.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="DocumentFormat.OpenXml" Version="2.14.0" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
   </ItemGroup>
 
   <ItemGroup>

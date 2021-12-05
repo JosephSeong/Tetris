@@ -12,11 +12,15 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Linq;
+using System.IO;
 
 namespace Tetris
 {
     public partial class MainWindow : Window
     {
+        int i = 0;
+        string _xmlFile = "Score\\Score.xml";
         MediaElement media = new MediaElement();
 
         private readonly ImageSource[] tileImages = new ImageSource[]
@@ -209,14 +213,22 @@ namespace Tetris
 
         private async void PlayAgain_Click(object sender, RoutedEventArgs e)         // 게임오버 메뉴 숨기고 게임 루프 재시작 
         {
+            // 점수 저장
+            i++;
+            XDocument doc = XDocument.Load(_xmlFile);
+            doc.Root.Add(new XElement("Contactiks",
+                new XElement("Name", i),
+                new XElement("Score", FinalScoreText.Text),
+                new XElement("Time", DateTime.Now.ToString(" yyyy-MM-dd  HH시 mm분 ss초"))));
+            doc.Save(_xmlFile);
+
             gameState = new GameState();
             GameOverMenu.Visibility = Visibility.Hidden;
             await GameLoop();
         }
-
+        
         void BacktoMenu(object sender, RoutedEventArgs e)                           // 메뉴로 돌아가기
         {
-
             Window win = new Menu();
             win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             win.Show();

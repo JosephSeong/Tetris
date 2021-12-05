@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml;
+using System.Xml.Linq;
+using System.IO;
 
 namespace Tetris
 {
@@ -20,6 +23,10 @@ namespace Tetris
     /// </summary>
     public partial class Rank : Window
     {
+        int i = 0;
+        string _xmlFile = "Score\\Score.xml";
+        //ProductsFactory info = new ProductsFactory();
+
         public Rank()
         {
             InitializeComponent();
@@ -31,6 +38,26 @@ namespace Tetris
             win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
             win.Show();
             Close();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+        //    dataGridView.ItemsSource = info.FindProducts(textBox.Text);
+        }
+
+        private void Btn_Refresh(object sender, RoutedEventArgs e)                  // 점수 새로고침
+        {
+            i++;
+            XDocument doc = XDocument.Load(_xmlFile);
+           
+            //read
+            var result = doc.Descendants("Contactiks").Select(x => new
+            {
+                Name = x.Element("Name").Value,
+                Score = x.Element("Score").Value,
+                Time = x.Element("Time").Value
+            });
+            dataGridView.ItemsSource = result;
         }
     }
 }
