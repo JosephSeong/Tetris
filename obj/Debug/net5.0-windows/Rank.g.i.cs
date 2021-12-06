@@ -69,7 +69,7 @@ namespace Tetris {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Tetris;V1.0.0.0;component/rank.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Tetris;component/rank.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Rank.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
