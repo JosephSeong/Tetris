@@ -47,8 +47,8 @@ namespace Tetris
             new BitmapImage(new Uri("Assets/Block-Z.png", UriKind.Relative))
         };
 
-        private readonly Image[,] imageControls;
-        private readonly int maxDelay = 500;
+        private readonly Image[,] imageControls;                       
+        private readonly int maxDelay = 500;                                // 블록 속도
         private readonly int minDelay = 75;
         private readonly int delayDecrease = 25;
 
@@ -57,7 +57,7 @@ namespace Tetris
         public MainWindow()
         {
             InitializeComponent();
-            imageControls = SetUpGameCanvas(gameState.GameGrid);
+            imageControls = SetUpGameCanvas(gameState.GameGrid);            // imageControl 배열 초기화
 
             media.Source = new Uri(@"C:\Users\USER\Desktop\C#\Training\Tetris\Sound\Tetris_game.mp3", UriKind.Absolute);            // 테트리스 음악
             LayoutRoot.Children.Add(media);
@@ -65,12 +65,12 @@ namespace Tetris
             media.Play();
         }
 
-        private Image[,] SetUpGameCanvas(GameGrid grid)                 // 
+        private Image[,] SetUpGameCanvas(GameGrid grid)               
         {
             Image[,] imageControls = new Image[grid.Rows, grid.Columns];
             int cellSize = 25;
 
-            for (int r = 0; r < grid.Rows; r++)                     // 게임 그리드 모든 행, 열 반복
+            for (int r = 0; r < grid.Rows; r++)                             // 게임 그리드 모든 행, 열 반복
             {
                 for (int c = 0; c < grid.Columns; c++)
                 {
@@ -80,9 +80,9 @@ namespace Tetris
                         Height = cellSize
                     };
 
-                    Canvas.SetTop(imageControl, (r - 2) * cellSize + 10);
-                    Canvas.SetLeft(imageControl, c * cellSize);
-                    GameCanvas.Children.Add(imageControl);
+                    Canvas.SetTop(imageControl, (r - 2) * cellSize + 10);   // 상단 숨겨진 행 위로 
+                    Canvas.SetLeft(imageControl, c * cellSize);             // 캔버스 왼쪽에서 이미지 왼쪽까지의 거리 (캔버스 내부 있지 않게)
+                    GameCanvas.Children.Add(imageControl);                  // 이미지를 차트로 만들고 배열에 추가
                     imageControls[r, c] = imageControl;
                 }
             }
@@ -94,7 +94,7 @@ namespace Tetris
         {
             for (int r = 0; r < grid.Rows; r++)
             {
-                for ( int c = 0; c < grid.Columns; c++)             // 각 위치 시작 id를 얻고 id를 사용하여 이 위치에 이미지 소스 설정
+                for ( int c = 0; c < grid.Columns; c++)                     // 각 위치 시작 id를 얻고 id를 사용하여 이 위치에 이미지 소스 설정
                 {
                     int id = grid[r, c];
                     imageControls[r, c].Opacity = 1;
@@ -103,7 +103,7 @@ namespace Tetris
             }
         }
 
-        private void DrawBlock(Block block)                     // 타일 위치 반복, 이미지 소스 업데이트
+        private void DrawBlock(Block block)                                 // 타일 위치 반복, 이미지 소스 업데이트
         {
             foreach (Position p in block.TilePositions())
             {
@@ -112,13 +112,13 @@ namespace Tetris
             }
         }
 
-        private void DrawNextBlock(BlockQueue blockQueue)       // 다음 블록
+        private void DrawNextBlock(BlockQueue blockQueue)       // 다음 블록 이미지
         {
             Block next = blockQueue.NextBlock;
             NextImage.Source = blockImages[next.Id];
         }
 
-        private void DrawHeldBlock(Block heldBlock)             // 블록 유지
+        private void DrawHeldBlock(Block heldBlock)             // 블록 유지 (홀드 중인 블록 확인)
         {
             if (heldBlock == null)
             {
@@ -130,7 +130,7 @@ namespace Tetris
             }
         }
 
-        private void DrawGhostBlock(Block block)                // 블록 떨어질 위치
+        private void DrawGhostBlock(Block block)                // 블록 떨어질 위치 확인
         {
             int dropDistance = gameState.BlockDropDistance();
 
@@ -143,7 +143,7 @@ namespace Tetris
 
         private void Draw(GameState gameState)
         {
-            DrawGrid(gameState.GameGrid);
+            DrawGrid(gameState.GameGrid);   
             DrawGhostBlock(gameState.CurrentBlock);
             DrawBlock(gameState.CurrentBlock);
             DrawNextBlock(gameState.BlockQueue);
@@ -196,9 +196,6 @@ namespace Tetris
                 case Key.Space:
                     gameState.DropBlock();
                     break;
-                //case Key.Escape:
-                //    gameState.Pause();
-                //    break;
                 default:
                     return;
             }

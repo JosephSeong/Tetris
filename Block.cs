@@ -8,7 +8,7 @@ namespace Tetris
 {
     public abstract class Block
     {
-        protected abstract Position[][] Tiles { get; }
+        protected abstract Position[][] Tiles { get; }                 // 4개 회전상태에서 타일 위치 포함하는 2차원 위치 배열
         protected abstract Position StartOffset { get; }
         public abstract int Id { get; }
 

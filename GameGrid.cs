@@ -13,7 +13,7 @@ namespace Tetris
         public int Rows { get; }
         public int Columns { get; }
 
-        public int this[int r, int c]
+        public int this[int r, int c]                   // 배열에 액세스
         {
             get => grid[r, c];
             set => grid[r, c] = value;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Tetris
 {
-    public class IBlock : Block                 // 네가지 회전 상태에 대한 타일 위치를 저장
+    public class IBlock : Block                                         // 네가지 회전 상태에 대한 타일 위치를 저장
     {
         private readonly Position[][] tiles = new Position[][]
         {

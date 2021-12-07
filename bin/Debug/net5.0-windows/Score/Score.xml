@@ -1,29 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <list>
-  <info></info>
-  <Contactiks>
-    <Name>1</Name>
-    <Score>Score : 3</Score>
-    <Time> 2021-12-07  01시 24분 18초</Time>
-  </Contactiks>
-  <Contactiks>
-    <Name>1</Name>
-    <Score>Score : 1</Score>
-    <Time> 2021-12-07  01시 24분 49초</Time>
-  </Contactiks>
-  <Contactiks>
-    <Name>2</Name>
-    <Score>Score : 0</Score>
-    <Time> 2021-12-07  01시 24분 52초</Time>
-  </Contactiks>
-  <Contactiks>
-    <Name>1</Name>
-    <Score>Score : 0</Score>
-    <Time> 2021-12-07  01시 26분 33초</Time>
-  </Contactiks>
-  <Contactiks>
-    <Name>2</Name>
-    <Score>Score : 0</Score>
-    <Time> 2021-12-07  01시 26분 36초</Time>
-  </Contactiks>
+	<info>
+		
+	</info>
 </list>

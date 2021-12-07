@@ -64,12 +64,12 @@ namespace Tetris
             {
                 return;
             }
-            if (HeldBlock == null)                  // 보류 중인 블록이 있으면 현재 블록을 설정하고 현재 블록을 다음 블록과 같게 설정
+            if (HeldBlock == null)                  // 홀드 중인 블록이 있으면 현재 블록을 설정하고 현재 블록을 다음 블록과 같게 설정
             {
                 HeldBlock = CurrentBlock;
                 CurrentBlock = BlockQueue.GetAndUpdate();
             }
-            else
+            else                                    // 현재 블록과 홀드한 블록 교환
             {
                 Block tmp = CurrentBlock;
                 CurrentBlock = HeldBlock;
@@ -182,10 +182,5 @@ namespace Tetris
             CurrentBlock.Move(BlockDropDistance(), 0);
             PlaceBlock();
         }
-
-        //public void Pause()                             // 게임 정지
-        //{
-            
-        //}
     }
 }

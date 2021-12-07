@@ -55,7 +55,7 @@ namespace Tetris
             media.Play();
         }
 
-        void BacktoLogin(object sender, RoutedEventArgs e)                           // 메뉴로 돌아가기
+        void BacktoLogin(object sender, RoutedEventArgs e)                              // 메뉴로 돌아가기
         {
             Window win = new Login();
             win.WindowStartupLocation = WindowStartupLocation.CenterScreen;
